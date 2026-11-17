@@ -1,15 +1,13 @@
 # Markov Processes
 
-Simulations and write-ups from **1MS012 Markov Processes** (period 3, year 1) of the M.Sc. in Image Analysis and Machine Learning at Uppsala University.
+Simulations and write-ups from **1MS012 Markov Processes** (period 3, spring 2026) of the M.Sc. in Image Analysis and Machine Learning at Uppsala University.
 
 Each notebook takes a result from the course — mixing time, Pólya recurrence, stationary distributions, the secretary problem — and checks it the way I find most convincing: simulate it, then put the empirical numbers next to the theory and see how close they land. The code is a mix of Python ports of the course's MATLAB examples and independent experiments I wrote while working through the material.
 
 ## What's in here
 
 ```
-markovprocesses/
-├── assignments/
-│   └── a1/                             # first written assignment (PDF)
+markov-processes-simulations/
 ├── notebooks/
 │   ├── card_shuffling.ipynb            # mixing time for a top-to-random shuffle
 │   ├── random_walks_recurrence.ipynb   # Pólya recurrence of random walks in d dimensions
