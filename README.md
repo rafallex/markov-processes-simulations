@@ -16,6 +16,7 @@ markovprocesses/
 │   ├── markov_chain_and_ifs.ipynb      # 3-state chain simulator + Sierpinski & Barnsley IFS
 │   └── stationary_distributions.ipynb  # stationary distributions via the null space of (P − I)ᵀ
 └── project/
+    ├── Secretary_Problem_Report.pdf    # group project report (6 pages)
     ├── Simulation.ipynb                # group project: secretary problem as a Markov chain
     └── exec_nb.py                       # runs Simulation.ipynb end-to-end and reports cell counts
 ```
@@ -63,7 +64,9 @@ python exec_nb.py   # executes Simulation.ipynb and prints the per-cell executio
 
 ## Project: the secretary problem as a finite Markov chain
 
-Group project with Anton Björk and Samuel Jonsson. We modelled the classical secretary problem (also called the best-choice or marriage problem) as a finite Markov chain with two absorbing states — "hired the best" and "didn't" — following Cory Simon's formulation, and reproduced his results in code. `Simulation.ipynb` computes the win probability p_W(t\*) three independent ways and shows they agree:
+Group project with Anton Björk and Samuel Jonsson. **Report: [`project/Secretary_Problem_Report.pdf`](project/Secretary_Problem_Report.pdf)** — derives the transition matrix under a threshold stopping rule, proves the optimal threshold by backward induction (following Dynkin's argument), and computes the success curve numerically.
+
+We modelled the classical secretary problem (also called the best-choice or marriage problem) as a finite Markov chain with two absorbing states — "hired the best" and "didn't" — following Cory Simon's formulation, and reproduced his results in code. `Simulation.ipynb` computes the win probability p_W(t\*) three independent ways and shows they agree:
 
 1. **Matrix powers** (exact): build the transition matrix P and read p_W off π⁽⁰⁾ Pᵗ\*⁺¹.
 2. **Markov-chain simulation**: sample transitions from P step by step until absorption.
@@ -74,4 +77,4 @@ Group project with Anton Björk and Samuel Jonsson. We modelled the classical se
 
 The exhaustive search over stopping thresholds recovers the textbook asymptotics — the optimal threshold tracks ⌊n/e⌋ and the win probability approaches 1/e ≈ 0.368. For n = 100 the optimal threshold is t\* = 37 (against ⌊100/e⌋ = 36) with p_W = 0.371; for n = 50 it is t\* = 18 with p_W = 0.374.
 
-The project reproduces Cory Simon's paper *The Best Choice Problem: calculating the optimal stopping rule using Markov chain theory* (Oregon State University) — that paper is the reference the notebook builds on, not our own write-up. Search for the title to find the source.
+The project builds on Cory Simon's paper *The Best Choice Problem: calculating the optimal stopping rule using Markov chain theory* (Oregon State University), which the report cites as its main source.
